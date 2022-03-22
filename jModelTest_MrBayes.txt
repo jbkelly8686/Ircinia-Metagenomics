@@ -1,0 +1,23 @@
+#jModelTest settings
+Arguments = -tr 16 --set-property log-dir=./ -d infile.phy -o outK05917.txt -n outlogK05917 -s 3 -f -i -g 4 -t ML -AIC -AICc -BIC -DT -S BEST -p -a -w 
+Input Alignment: "infile.phy"
+NumTaxa = 115
+Length = 1,698
+Phyml version = 20130103
+Phyml binary = PhyML_3.0_linux64
+Candidate models = 24
+number of substitution schemes = 3
+including models with equal/unequal base frequencies (+F)
+including models with/without a proportion of invariable sites (+I)
+including models with/without rate variation among sites (+G) (nCat = 4)
+Optimized free parameters (K) = Substitution parameters + 227 branch lengths + topology
+Base tree for likelihood calculations = Maximum Likelihood
+Tree topology search operation = Best of {NNI, SPR}
+
+#example of the MrBayes commands
+lset nst=6 rates=invgamma ploidy=haploid;
+mcmcp ngen=10000000 samplefreq=1000 printfreq=1000 diagnfreq=1000;
+mcmc;
+sump;
+sumt;
+
